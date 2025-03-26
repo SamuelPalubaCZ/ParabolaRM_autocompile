@@ -1,17 +1,8 @@
 #!/bin/sh
-# Download toolchain for Remarkable kernel compile script
 
-# Source the base.sh script
-source sources/base.sh
-echo "Base script sourced"
-
-# Source download.sh script
-source sources/download.sh
-echo "Download script sourced"
-
-# Source pkg_detection.sh script
-source sources/pkg_detection.sh
-echo "Package detection script sourced"
+# Download resources for Remarkable kernel compile script
+# Source config.sh script
+source /workspaces/ParabolaRM_autocompile/sources/config.sh
 
 # Install dependencies
 if [ "$install_dependencies" = true ]; then

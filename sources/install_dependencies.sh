@@ -1,17 +1,8 @@
 #!/bin/bash
 # Install dependencies for Remarkable kernel compile script
 
-# Source the base.sh script
-source base.sh
-echo "Base script sourced"
-
-# Source download.sh script
-source download.sh
-echo "Download script sourced"
-
-# Source pkg_detection.sh script
-source pkg_detection.sh
-echo "Package detection script sourced"
+# Source config.sh script
+source /workspaces/ParabolaRM_autocompile/sources/config.sh
 
 sh pkg_detection.sh
 package_manager=$pkg_manager  # Correct

@@ -1,7 +1,7 @@
 #!/bin/sh
 
-# Source the base.sh script
-source base.sh
+# Source config.sh script
+source /workspaces/ParabolaRM_autocompile/sources/config.sh
 
 # Download function for Remarkable kernel compile script
 
