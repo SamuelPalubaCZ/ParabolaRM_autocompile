@@ -1,19 +1,23 @@
 #!/bin/sh
 # Install dependencies for Remarkable kernel compile script
 
+# Source the base.sh script
+source base.sh
+echo "Base script sourced"
+
+# Source download.sh script
+source download.sh
+echo "Download script sourced"
+
 # Source the package manager detection variables with script by Michael Deacey (by default)
 pkg_detection() {
-source [wget -O - ${pkg_detection_url:="https://raw.githubusercontent.com/mdeacey/universal-os-detector/refs/heads/main/universal-os-detector.sh"}]
-console_log_level=${console_log_levellog_level:=0}
-: "
-Log levels:
-0 or n/none: No console output
-1 or d/default: system, warn, and error messages (default)
-2 or v/verbose: system, warn, error, and info messages
-3 or deb/debug: All messages, including debug
-"
-run_detection
-echo $pkg_manager
+    wget -O - ${pkg_detection_url:="https://raw.githubusercontent.com/mdeacey/universal-os-detector/refs/heads/main/universal-os-detector.sh"} >> /tmp/pkg_detection.sh
+    source /tmp/pkg_detection.sh
+    run_detection
+    console_log_level=${console_log_levellog_level:=0}
+    echo "Package manager detection script sourced"
+    echo $pkg_manager
+    run_detection
 }
 
 install_dependencies() {
@@ -61,15 +65,9 @@ dependencies=${dependencies:=[$(($@))]}
                     echo "*** $dep ***"
                     exit 1
                     ;;
-                *)
-                    if unknown_pkg_manager = false; then
-                        echo "Unknown package manager, please install next dependencies manually"
-                        unknown_pkg_manager=true
-                    fi
-                    echo "*** $dep ***"
-                    exit 1
-                    ;;
+                
             esac
         fi
     done
 }
+install_dependencies
