@@ -1,8 +1,8 @@
-dir_base="/workspaces/ParabolaRM_autocompile/base.sh"
+dir_base="/workspaces/ParabolaRM_autocompile/sources/base.sh"
 dir_download="/workspaces/ParabolaRM_autocompile/sources/download.sh"
 dir_pkg_detection="/workspaces/ParabolaRM_autocompile/sources/pkg_detection.sh"
 dir_download_everything="/workspaces/ParabolaRM_autocompile/sources/download_everything.sh"
-dir_config="/workspaces/ParabolaRM_autocompile/sources/config.sh
+dir_config="/workspaces/ParabolaRM_autocompile/config.sh
 "
 
 # Source the base.sh script
