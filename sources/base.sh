@@ -16,14 +16,15 @@ dependencies=${dependencies:="git wget aria2"}
 # Remarkable toolchain URL 
 toolchain_url=${toolchain_url:="https://ipfs.eeems.website/ipfs/Qmdkdeh3bodwDLM9YvPrMoAi6dFYDDCodAnHvjG5voZxiC"}
 
-# Remarkable kernel source URL
-kernel_git=${kernel_git:="https://github.com/SamuelPalubaCZ/linux-kernel.git"}
+# Remarkable toolchain directory
+toolchain_dir=${toolchain_dir:="/workspaces/ParabolaRM_autocompile/toolchain"}
 
-# Remarkable kernel source branch
-kernel_branch=${kernel_branch:="lars/zero-gravitas_4.9"}
+# Remarkable kernel source URL
+kernel_url=${kernel_url:="https://codeload.github.com/reMarkable/linux/zip/refs/heads/lars/zero-gravitas_4.9"}
+
 
 # Remarkable kernel source directory
-kernel_dir=${kernel_dir:="/home/user/Documents/linux-kernel"}
+kernel_dir=${kernel_dir:="/workspaces/ParabolaRM_autocompile/linux-kernel"}
 
 # Source the package manager detection variables with script by Michael Deacey (by default)
 pkg_detection() {
