@@ -1,5 +1,5 @@
 #!/bin/sh
-# Remarkable kernel compile script
+# Install dependencies for Remarkable kernel compile script
 
 # Log level
 console_log_level=${console_log_levellog_level:=0}
