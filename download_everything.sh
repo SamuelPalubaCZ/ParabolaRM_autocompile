@@ -19,12 +19,6 @@ if [ "$install_dependencies" = true ]; then
     echo "Dependencies installed"
 fi
 
-# Install dependencies
-if [ "$install_dependencies" = true ]; then
-    install_dependencies $dependencies
-    echo "Dependencies installed"
-fi
-
 # Download toolchain
 download $toolchain_url $kernel_dir
 echo "Toolchain downloaded"
@@ -32,9 +26,3 @@ echo "Toolchain downloaded"
 # Download and extract kernel source
 download $kernel_url $toolchain_dir
 echo "Kernel source downloaded"
-
-# Install dependencies
-if [ "$install_dependencies" = true ]; then
-    install_dependencies $dependencies
-    echo "Dependencies installed"
-fi

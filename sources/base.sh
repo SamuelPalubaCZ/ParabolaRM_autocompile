@@ -26,10 +26,3 @@ kernel_url=${kernel_url:="https://codeload.github.com/reMarkable/linux/zip/refs/
 # Remarkable kernel source directory
 kernel_dir=${kernel_dir:="/workspaces/ParabolaRM_autocompile/linux-kernel"}
 
-# Source the package manager detection variables with script by Michael Deacey (by default)
-pkg_detection() {
-source [wget -O - ${pkg_detection_url:="https://raw.githubusercontent.com/mdeacey/universal-os-detector/refs/heads/main/universal-os-detector.sh"}]
-run_detection
-echo $pkg_manager
-
-}
