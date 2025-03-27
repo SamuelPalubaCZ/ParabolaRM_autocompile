@@ -1,3 +1,4 @@
+#!/bin/sh
 # Remarkable kernel compile script for ParabolaRM distro (Parabola GNU/Linux-libre mod)
 
 # Source the base.sh script
@@ -6,12 +7,22 @@ source $dir_install_dependencies
 source $dir_download_everything
 source $dir_extract_kernel
 
-# Remove $kernel_dir $kernel_download_dir $toolchain_dir $toolchain_download_dir
-rm -rf $kernel_dir $toolchain_dir $kernel_download_dir $toolchain_download_dir
+remove_kernel
+remove_toolchain
+remove_downlands
+remove_extracted
+
+# Create required directories
+mkdir -p "$kernel_dir"
+mkdir -p "$kernel_download_dir"
+mkdir -p "$toolchain_dir"
+mkdir -p "$toolchain_download_dir"
+mkdir -p "$extract_dir/kernel"
+mkdir -p "$extract_dir/toolchain"
 
 # Install dependencies
 if [ "$install_dependencies" = true ]; then
-    install_dependencies $dependencies
+    install_dependencies "$dependencies"
 fi
 
 # Download everything
@@ -21,5 +32,6 @@ fi
 
 # Extract kernel
 if [ "$extract_kernel" = true ]; then
-    extract_kernel $kernel_dir $kernel_url
+    extract_kernel
+    exdef_dir="$PWD"
 fi
