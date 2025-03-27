@@ -18,7 +18,3 @@ download_toolchain() {
     download $toolchain_url $toolchain_download_dir
     echo "Toolchain downloaded"
 }
-
-if [ "$download_kernel" = true ]; then
-    download_kernel
-fi

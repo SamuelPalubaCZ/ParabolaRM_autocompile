@@ -33,5 +33,12 @@ fi
 
 # Extract kernel
 if [ "$extract_kernel" = true ]; then
+    echo "Starting kernel extraction..."
     extract_kernel
+    if [ $? -eq 0 ]; then
+        echo "Kernel extraction completed successfully"
+    else
+        echo "Kernel extraction failed"
+        exit 1
+    fi
 fi
