@@ -22,7 +22,3 @@ download_toolchain() {
 if [ "$download_kernel" = true ]; then
     download_kernel
 fi
-
-if [ "$download_toolchain" = true ]; then
-    download_toolchain
-fi

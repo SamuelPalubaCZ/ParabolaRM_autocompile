@@ -27,11 +27,11 @@ fi
 
 # Download everything
 if [ "$download_everything" = true ]; then
-    download_everything
+    download_kernel
+    download_toolchain
 fi
 
 # Extract kernel
 if [ "$extract_kernel" = true ]; then
     extract_kernel
-    exdef_dir="$PWD"
 fi
