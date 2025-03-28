@@ -1,14 +1,18 @@
-#!/bin/sh
+#!/bin/bash
 # Install dependencies for Remarkable kernel compile script
 
+# Get the script's directory and project root
+script_dir=$(dirname "$(readlink -f "$0")")
+project_root=$(dirname "$script_dir")
+
 # Define script directories
-dir_base=${dir_base:="/workspaces/ParabolaRM_autocompile/sources/base.sh"}
-dir_download=${dir_download:="/workspaces/ParabolaRM_autocompile/sources/download.sh"}
-dir_download_everything=${dir_download_everything:="/workspaces/ParabolaRM_autocompile/sources/download_everything.sh"}
-dir_extract=${dir_extract:="/workspaces/ParabolaRM_autocompile/sources/extract.sh"}
-dir_extract_kernel=${dir_extract_kernel:="/workspaces/ParabolaRM_autocompile/sources/extract_kernel.sh"}
-dir_pkg_detection=${dir_pkg_detection:="/workspaces/ParabolaRM_autocompile/sources/pkg_detection.sh"}
-dir_install_dependencies=${dir_install_dependencies:="/workspaces/ParabolaRM_autocompile/sources/install_dependencies.sh"}
+dir_base="${script_dir}/base.sh"
+dir_download="${script_dir}/download.sh"
+dir_download_everything="${script_dir}/download_everything.sh"
+dir_extract="${script_dir}/extract.sh"
+dir_extract_kernel="${script_dir}/extract_kernel.sh"
+dir_pkg_detection="${script_dir}/pkg_detection.sh"
+dir_install_dependencies="${script_dir}/install_dependencies.sh"
 
 idk="true"
 
@@ -33,13 +37,13 @@ download_toolchain=${download_toolchain:=$idk}
 toolchain_url=${toolchain_url:="https://ipfs.eeems.website/ipfs/Qmdkdeh3bodwDLM9YvPrMoAi6dFYDDCodAnHvjG5voZxiC"}
 
 # Remarkable toolchain download directory
-toolchain_download_dir=${toolchain_download_dir:="/workspaces/ParabolaRM_autocompile/downloads/toolchain"}
+toolchain_download_dir=${toolchain_download_dir:="${project_root}/downloads/toolchain"}
 
 # Remarkable toolchain install file directory
-toolchain_dir=${toolchain_dir:="/workspaces/ParabolaRM_autocompile/toolchain"}
+toolchain_dir=${toolchain_dir:="${project_root}/toolchain"}
 
 # Remarkable toolchain env config file directory
-toolchain_env_dir=${toolchain_env_dir:="/workspaces/ParabolaRM_autocompile/toolchain/env.sh"}
+toolchain_env_dir=${toolchain_env_dir:="${project_root}/toolchain/env.sh"}
 
 
 # Remarkable kernel Extract
@@ -52,10 +56,10 @@ download_kernel=${download_kernel:=$idk}
 kernel_url=${kernel_url:="https://codeload.github.com/reMarkable/linux/zip/refs/heads/lars/zero-gravitas_4.9"}
 
 # Remarkable kernel download directory
-kernel_download_dir=${kernel_download_dir="/workspaces/ParabolaRM_autocompile/downloads/kernel"}
+kernel_download_dir=${kernel_download_dir:="${project_root}/downloads/kernel"}
 
 # Remarkable kernel directory
-kernel_dir=${kernel_dir:="/workspaces/ParabolaRM_autocompile/linux-kernel"}
+kernel_dir=${kernel_dir:="${project_root}/linux-kernel"}
 
 
 
@@ -76,7 +80,7 @@ unzip_manager=${unzip_manager:="7z"}
 unzip_multithreaded=${unzip_multithreaded:=true}
 
 # Dir for extracted files
-extract_dir=${extract_dir:="/workspaces/ParabolaRM_autocompile/extracted"}
+extract_dir=${extract_dir:="${project_root}/extracted"}
 
 
 remove_junk_before() {

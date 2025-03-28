@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Source extract.sh script via base.sh envs
 source ${dir_base:="/workspaces/ParabolaRM_autocompile/sources/base.sh"}

@@ -1,11 +1,15 @@
-#!/bin/sh
-# Download all packiges thata are needed for the compilation and cant be installed via package manager
+#!/bin/bash
+# Download all packages that are needed for the compilation
+
+# Get script directory and project root
+script_dir=$(dirname "$(readlink -f "$0")")
+project_root=$(dirname "$script_dir")
 
 # Source the base.sh script
-source ${dir_base:="/workspaces/ParabolaRM_autocompile/sources/base.sh"}
+. "${script_dir}/base.sh"
 
 # Source download.sh script
-source $dir_download
+. "${script_dir}/download.sh"
 
 # Download kernel function
 download_kernel() {

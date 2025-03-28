@@ -1,4 +1,8 @@
-#!/bin/sh
+#!/bin/bash
+
+# Get script directory
+script_dir=$(dirname "$(readlink -f "$0")")
+project_root=$(dirname "$script_dir")
 
 # Extract function
 extract() {

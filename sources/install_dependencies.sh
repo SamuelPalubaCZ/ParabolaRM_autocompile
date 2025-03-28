@@ -1,11 +1,15 @@
 #!/bin/bash
 # Install dependencies for Remarkable kernel compile script
+
+# Get script directory and project root
+script_dir=$(dirname "$(readlink -f "$0")")
+project_root=$(dirname "$script_dir")
+
 # Source the base.sh script
-source ${dir_base:="/workspaces/ParabolaRM_autocompile/sources/base.sh"}
+. "${script_dir}/base.sh"
 
 # Source pkg_detection.sh script
-source $dir_pkg_detection
-sh sources/pkg_detection.sh
+. "${script_dir}/pkg_detection.sh"
 package_manager=$pkg_manager  # Correct
 
 install_dependencies() {

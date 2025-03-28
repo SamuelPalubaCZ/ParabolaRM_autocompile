@@ -1,11 +1,21 @@
-#!/bin/sh
+#!/bin/bash
 # Remarkable kernel compile script for ParabolaRM distro (Parabola GNU/Linux-libre mod)
 
-# Source the base.sh script
-source ${dir_base:="/workspaces/ParabolaRM_autocompile/sources/base.sh"}
-source $dir_install_dependencies
-source $dir_download_everything
-source $dir_extract_kernel
+# Get the script's directory
+script_dir=$(dirname "$(readlink -f "$0")")
+
+# Source the base.sh script and other dependencies
+. "${script_dir}/sources/base.sh"
+. "${script_dir}/sources/install_dependencies.sh"
+. "${script_dir}/sources/download_everything.sh"
+. "${script_dir}/sources/extract_kernel.sh"
+
+# Set directory paths relative to script location
+kernel_dir="${script_dir}/kernel"
+kernel_download_dir="${script_dir}/downloads/kernel"
+toolchain_dir="${script_dir}/toolchain"
+toolchain_download_dir="${script_dir}/downloads/toolchain"
+extract_dir="${script_dir}/extracted"
 
 remove_kernel
 remove_toolchain
