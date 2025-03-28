@@ -1,0 +1,112 @@
+=== ParabolaRM Kernel Autocompile Log ===
+Script: extract_kernel
+Caller: install.sh
+Time: Fri Mar 28 12:43:42 CET 2025
+User: samuel
+Working Directory: /home/samuel/remarkable/kernel/ParabolaRM_autocompile
+Log Level: 5
+========================================
+
+[2025-03-28 12:43:42][INFO] Cleaning up directories...
+[2025-03-28 12:43:42][DETAIL] Removing kernel directory...
+[2025-03-28 12:43:42][DETAIL] Removing toolchain directory...
+[2025-03-28 12:43:42][DETAIL] Removing downloads directory...
+[2025-03-28 12:43:42][DETAIL] Removing extracted directory...
+[2025-03-28 12:43:42][INFO] Creating required directories...
+[2025-03-28 12:43:42][DETAIL] Creating kernel directory: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/linux-kernel
+[2025-03-28 12:43:42][DETAIL] Creating kernel download directory: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/downloads/kernel
+[2025-03-28 12:43:42][DETAIL] Creating toolchain directory: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/toolchain
+[2025-03-28 12:43:42][DETAIL] Creating toolchain download directory: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/downloads/toolchain
+[2025-03-28 12:43:42][DETAIL] Creating extract directory for kernel: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/extracted/kernel
+[2025-03-28 12:43:42][DETAIL] Creating extract directory for toolchain: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/extracted/toolchain
+[2025-03-28 12:43:42][DETAIL] Creating logs directory: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/logs
+[2025-03-28 12:43:42][INFO] Installing dependencies...
+[2025-03-28 12:43:42][INFO] Starting dependency installation process
+[2025-03-28 12:43:42][INFO] Dependencies to install: git wget curl aria2 pigz unzip p7zip-full
+[2025-03-28 12:43:42][INFO] Using sudo for installations
+[2025-03-28 12:43:42][INFO] Checking for dependency: git
+[2025-03-28 12:43:42][INFO] ✓ Dependency already installed: git
+[2025-03-28 12:43:42][INFO] Checking for dependency: wget
+[2025-03-28 12:43:42][INFO] ✓ Dependency already installed: wget
+[2025-03-28 12:43:42][INFO] Checking for dependency: curl
+[2025-03-28 12:43:42][INFO] ✓ Dependency already installed: curl
+[2025-03-28 12:43:42][INFO] Checking for dependency: aria2
+[2025-03-28 12:43:42][WARNING] Dependency not found: aria2 - Installing...
+[2025-03-28 12:43:42][DETAIL] Package name for aria2 in [PKG_DETECTION] Detecting package manager...
+[PKG_DETECTION] Found apt package manager
+apt: aria2
+[2025-03-28 12:43:42][ERROR] Installation of aria2 failed with status: 1
+[2025-03-28 12:43:42][INFO] Checking for dependency: pigz
+[2025-03-28 12:43:42][WARNING] Dependency not found: pigz - Installing...
+[2025-03-28 12:43:42][DETAIL] Package name for pigz in [PKG_DETECTION] Detecting package manager...
+[PKG_DETECTION] Found apt package manager
+apt: pigz
+[2025-03-28 12:43:42][ERROR] Installation of pigz failed with status: 1
+[2025-03-28 12:43:42][INFO] Checking for dependency: unzip
+[2025-03-28 12:43:42][WARNING] Dependency not found: unzip - Installing...
+[2025-03-28 12:43:42][DETAIL] Package name for unzip in [PKG_DETECTION] Detecting package manager...
+[PKG_DETECTION] Found apt package manager
+apt: unzip
+[2025-03-28 12:43:42][ERROR] Installation of unzip failed with status: 1
+[2025-03-28 12:43:42][INFO] Checking for dependency: p7zip-full
+[2025-03-28 12:43:42][WARNING] Dependency not found: p7zip-full - Installing...
+[2025-03-28 12:43:42][DETAIL] Package name for p7zip-full in [PKG_DETECTION] Detecting package manager...
+[PKG_DETECTION] Found apt package manager
+apt: p7zip-full
+[2025-03-28 12:43:42][ERROR] Installation of p7zip-full failed with status: 1
+[2025-03-28 12:43:42][WARNING] Some dependencies failed to install
+[2025-03-28 12:43:42][INFO] ✓ Dependencies installation completed successfully
+[2025-03-28 12:43:43][WARNING] Some dependencies still appear to be missing:
+[2025-03-28 12:43:43][WARNING] Missing: aria2
+[2025-03-28 12:43:43][WARNING] Missing: pigz
+[2025-03-28 12:43:43][WARNING] Missing: unzip
+[2025-03-28 12:43:43][WARNING] Missing: p7zip-full
+[2025-03-28 12:43:43][WARNING] Continuing anyway, but installation may fail
+[2025-03-28 12:43:43][INFO] Starting downloads...
+[2025-03-28 12:43:43][INFO] Downloading kernel...
+[2025-03-28 12:43:43][INFO] Starting kernel download from: https://codeload.github.com/reMarkable/linux/zip/refs/heads/lars/zero-gravitas_4.9
+[2025-03-28 12:43:43][INFO] Starting download: URL=https://codeload.github.com/reMarkable/linux/zip/refs/heads/lars/zero-gravitas_4.9, Destination=/home/samuel/remarkable/kernel/ParabolaRM_autocompile/downloads/kernel
+[2025-03-28 12:43:43][DETAIL] Removed old directory: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/downloads/kernel
+[2025-03-28 12:43:43][DETAIL] Created directory: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/downloads/kernel
+[2025-03-28 12:43:43][DETAIL] Target filename: zero-gravitas_4.9
+[2025-03-28 12:43:43][INFO] Using wget to download
+[2025-03-28 12:44:04][INFO] ✓ Download completed successfully
+[2025-03-28 12:44:04][DETAIL] File verified: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/downloads/kernel/zero-gravitas_4.9
+[2025-03-28 12:44:04][INFO] ✓ Kernel downloaded successfully to: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/downloads/kernel
+[2025-03-28 12:44:04][DETAIL] Files found in download directory: 1
+[2025-03-28 12:44:04][INFO] Downloading toolchain...
+[2025-03-28 12:44:04][INFO] Starting toolchain download from: https://ipfs.eeems.website/ipfs/Qmdkdeh3bodwDLM9YvPrMoAi6dFYDDCodAnHvjG5voZxiC
+[2025-03-28 12:44:04][INFO] Starting download: URL=https://ipfs.eeems.website/ipfs/Qmdkdeh3bodwDLM9YvPrMoAi6dFYDDCodAnHvjG5voZxiC, Destination=/home/samuel/remarkable/kernel/ParabolaRM_autocompile/downloads/toolchain
+[2025-03-28 12:44:04][DETAIL] Removed old directory: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/downloads/toolchain
+[2025-03-28 12:44:04][DETAIL] Created directory: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/downloads/toolchain
+[2025-03-28 12:44:04][DETAIL] Target filename: Qmdkdeh3bodwDLM9YvPrMoAi6dFYDDCodAnHvjG5voZxiC
+[2025-03-28 12:44:04][INFO] Using wget to download
+[2025-03-28 12:46:46][INFO] ✓ Download completed successfully
+[2025-03-28 12:46:46][DETAIL] File verified: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/downloads/toolchain/Qmdkdeh3bodwDLM9YvPrMoAi6dFYDDCodAnHvjG5voZxiC
+[2025-03-28 12:46:46][INFO] ✓ Toolchain downloaded successfully to: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/downloads/toolchain
+[2025-03-28 12:46:46][INFO] ✓ All downloads completed successfully
+[2025-03-28 12:46:46][INFO] Starting kernel extraction...
+[2025-03-28 12:46:46][INFO] Starting kernel extraction process
+[2025-03-28 12:46:46][DETAIL] Searching for zip file in: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/downloads/kernel
+[2025-03-28 12:46:46][WARNING] No .zip files found, checking for any files...
+[2025-03-28 12:46:46][INFO] Found a file without .zip extension: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/downloads/kernel/zero-gravitas_4.9
+[2025-03-28 12:46:46][INFO] Renaming to: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/downloads/kernel/zero-gravitas_4.9.zip
+[2025-03-28 12:46:46][INFO] Found kernel zip: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/downloads/kernel/zero-gravitas_4.9.zip
+[2025-03-28 12:46:46][INFO] Extracting to: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/linux-kernel
+[2025-03-28 12:46:46][DETAIL] File type: Zip archive data, at least v1.0 to extract, compression method=store
+[2025-03-28 12:46:46][DETAIL] Confirmed file is a ZIP archive
+[2025-03-28 12:46:46][INFO] Starting extraction process
+[2025-03-28 12:46:46][DETAIL] Archive: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/downloads/kernel/zero-gravitas_4.9.zip
+[2025-03-28 12:46:46][DETAIL] Destination: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/linux-kernel
+[2025-03-28 12:46:46][DETAIL] Created destination directory: /home/samuel/remarkable/kernel/ParabolaRM_autocompile/linux-kernel
+[2025-03-28 12:46:47][WARNING] Configured unzip manager 'unzip' not found or not specified
+[2025-03-28 12:46:47][INFO] Trying fallback extraction methods...
+[2025-03-28 12:46:47][ERROR] No extraction tools found. Please install unzip, 7z, or tar
+[2025-03-28 12:46:47][ERROR] Extraction failed with status: 1
+[2025-03-28 12:46:47][ERROR] Kernel extraction failed with status: 1
+[2025-03-28 12:46:47][INFO] Trying alternative extraction method...
+[2025-03-28 12:46:47][ERROR] Kernel extraction failed even with alternative method
+[2025-03-28 12:46:47][ERROR] Cannot continue without kernel extraction
+[2025-03-28 12:46:47][INFO] Disabling passwordless sudo...
+[2025-03-28 12:46:47][INFO] ✓ Passwordless sudo disabled successfully
+[2025-03-28 12:46:47][ERROR] Installation process failed due to kernel extraction failure

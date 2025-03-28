@@ -1,0 +1,15 @@
+=== ParabolaRM Kernel Autocompile Log ===
+Script: install
+Caller: main
+Time: Fri Mar 28 12:43:42 CET 2025
+User: samuel
+Working Directory: /home/samuel/remarkable/kernel/ParabolaRM_autocompile
+Log Level: 5
+========================================
+
+[2025-03-28 12:43:42][INFO] Enabling passwordless sudo...
+[2025-03-28 12:43:42][INFO] ✓ Passwordless sudo enabled successfully
+[2025-03-28 12:43:42][INFO] ✓ Verified passwordless sudo is working
+[2025-03-28 12:43:42][DEBUG] download_everything set to: true
+[2025-03-28 12:43:42][DEBUG] install_dependencies set to: true
+[2025-03-28 12:43:42][DEBUG] Sourcing install_dependencies.sh script...

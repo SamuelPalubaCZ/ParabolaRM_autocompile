@@ -1,0 +1,14 @@
+=== ParabolaRM Kernel Autocompile Log ===
+Script: install_dependencies
+Caller: install.sh
+Time: Fri Mar 28 12:43:42 CET 2025
+User: samuel
+Working Directory: /home/samuel/remarkable/kernel/ParabolaRM_autocompile
+Log Level: 5
+========================================
+
+[2025-03-28 12:43:42][INFO] Using package manager: [PKG_DETECTION] Detecting package manager...
+[PKG_DETECTION] Found apt package manager
+apt
+[2025-03-28 12:43:42][INFO] Using sudo for installation: true
+[2025-03-28 12:43:42][DEBUG] Sourcing download_kernel.sh script...
